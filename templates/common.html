@@ -1,0 +1,80 @@
+{{define "nav"}}
+<nav class="nav">
+    <a href="/">Accueil</a>
+    <a href="/promo">Promo</a>
+    <a href="/change">Compteur</a>
+    <a href="/user/form">Formulaire</a>
+</nav>
+{{end}}
+
+{{define "style"}}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .nav {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+    }
+    .nav a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+    .student-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .gender-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .pair {
+        background-color: #e8f5e9;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .impair {
+        background-color: #ffebee;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    input, select {
+        padding: 5px;
+        margin-top: 5px;
+    }
+    button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .user-info {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+</style>
+{{end}}

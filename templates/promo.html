@@ -1,0 +1,31 @@
+{{define "promo.html"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Web Golang - Promo</title>
+    {{template "style"}}
+</head>
+<body>
+    {{template "nav"}}
+    <h1>{{.Name}}</h1>
+    <div class="class-info">
+        <p><strong>Filière:</strong> {{.Department}}</p>
+        <p><strong>Niveau:</strong> {{.Level}}</p>
+        <p><strong>Nombre d'étudiants:</strong> {{.StudentCount}}</p>
+    </div>
+    <h2>Liste des étudiants</h2>
+    <div class="students">
+        {{range .Students}}
+        <div class="student-card">
+            <img class="gender-icon" src="/static/{{if eq .Gender "M"}}male.png{{else}}female.png{{end}}" alt="Genre">
+            <p><strong>Nom:</strong> {{.LastName}}</p>
+            <p><strong>Prénom:</strong> {{.FirstName}}</p>
+            <p><strong>Âge:</strong> {{.Age}} ans</p>
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>
+{{end}}

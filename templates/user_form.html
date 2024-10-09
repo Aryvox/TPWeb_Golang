@@ -1,0 +1,39 @@
+{{define "user_form.html"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Web Golang - Formulaire</title>
+    {{template "style"}}
+</head>
+<body>
+    {{template "nav"}}
+    <h1>Formulaire Utilisateur</h1>
+    <form action="/user/treatment" method="POST">
+        <div class="form-group">
+            <label for="firstName">Prénom:</label>
+            <input type="text" id="firstName" name="firstName" required pattern="[A-Za-z]{1,32}">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Nom:</label>
+            <input type="text" id="lastName" name="lastName" required pattern="[A-Za-z]{1,32}">
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Date de naissance:</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Genre:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Choisir...</option>
+                <option value="masculin">Masculin</option>
+                <option value="féminin">Féminin</option>
+                <option value="autre">Autre</option>
+            </select>
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>
+{{end}}

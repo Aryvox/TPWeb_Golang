@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Web Golang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .nav {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .student-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .gender-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .pair {
+            background-color: #e8f5e9;
+        }
+        .impair {
+            background-color: #ffebee;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        input, select {
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">Accueil</a>
+        <a href="/promo">Promo</a>
+        <a href="/change">Compteur</a>
+        <a href="/user/form">Formulaire</a>
+    </nav>
+    {{if eq .TemplateName "home"}}
+        {{template "home" .Data}}
+    {{else if eq .TemplateName "promo"}}
+        {{template "promo" .Data}}
+    {{else if eq .TemplateName "change"}}
+        {{template "change" .Data}}
+    {{else if eq .TemplateName "user_form"}}
+        {{template "user_form" .Data}}
+    {{else if eq .TemplateName "user_display"}}
+        {{template "user_display" .Data}}
+    {{end}}
+</body>
+</html>

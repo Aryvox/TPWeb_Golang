@@ -1,0 +1,25 @@
+{{define "user_display.html"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Web Golang - Informations</title>
+    {{template "style"}}
+</head>
+<body>
+    {{template "nav"}}
+    <h1>Informations Utilisateur</h1>
+    {{if .FirstName}}
+    <div class="user-info">
+        <p><strong>Nom:</strong> {{.LastName}}</p>
+        <p><strong>Prénom:</strong> {{.FirstName}}</p>
+        <p><strong>Date de naissance:</strong> {{.BirthDate}}</p>
+        <p><strong>Genre:</strong> {{.Gender}}</p>
+    </div>
+    {{else}}
+    <p>Aucune information utilisateur disponible. Veuillez remplir le <a href="/user/form">formulaire</a>.</p>
+    {{end}}
+</body>
+</html>
+{{end}}
